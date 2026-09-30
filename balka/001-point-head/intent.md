@@ -4,8 +4,8 @@ Author: Nikita Furletov. Owner: Nikita Furletov. Status: draft. Date: 2026-09-30
 
 ## Problem
 
-Raw AIFS ENS 2 m temperature misses what thermometers read, and the 11 months of AIFS ENS
-output we hold are far too little to learn a correction from. WN3 showed a way round
+Raw AIFS ENS 2 m temperature misses what thermometers read, and AIFS ENS has run
+operationally only since July 2025, far too short a record to learn a correction from. WN3 showed a way round
 that: keep a model trained on decades of analyses frozen, and fit only a small head on
 top of it to station reports; the head then predicts at any point, even where no station
 is. AIFS ENS is open and was trained on 40+ years of ERA5, so it can play that frozen model.
@@ -26,7 +26,7 @@ starting with Leningrad Oblast.
 
 ## Out of scope
 
-- Downscaling to CERRA; that is the sibling repo's job.
+- Downscaling to a regional reanalysis grid.
 - Other parameters than 2 m temperature and dew point.
 - Retraining AIFS ENS itself.
 
