@@ -1,6 +1,6 @@
 # Intent: a head on frozen AIFS ENS, after WN3
 
-Author: Nikita Furletov. Owner: Nikita Furletov. Status: draft. Date: 2026-09-30.
+Author: Nikita Furletov. Owner: Nikita Furletov. Status: accepted. Date: 2026-09-30.
 
 ## Problem
 
