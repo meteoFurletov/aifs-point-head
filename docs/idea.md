@@ -4,7 +4,7 @@ What this repo builds, and where it has to differ from WN3. The method itself is
 
 ## Why
 
-AIFS ENS 2 m temperature is a grid-box value at ~31 km and misses what a thermometer at a given spot reads. Learning that correction from AIFS ENS output alone does not work: the sibling repo holds 11 months of it. WN3 shows the way round: let a model trained on decades of analyses carry the representation, keep it frozen, and fit only a small head to station reports. AIFS ENS is open (weights CC BY 4.0, code Apache 2.0) and was pre-trained on ERA5 1979–2022, so it can be that frozen model.
+AIFS ENS 2 m temperature is a grid-box value at ~31 km and misses what a thermometer at a given spot reads. Learning that correction from AIFS ENS output alone does not work: it has run operationally only since July 2025. WN3 shows the way round: let a model trained on decades of analyses carry the representation, keep it frozen, and fit only a small head to station reports. AIFS ENS is open (weights CC BY 4.0, code Apache 2.0) and was pre-trained on ERA5 1979–2022, so it can be that frozen model.
 
 ## WN3 against this repo
 
@@ -15,7 +15,7 @@ AIFS ENS 2 m temperature is a grid-box value at ~31 km and misses what a thermom
 | Metadata | elevation, land/sea, time in the step | the same, plus lat/lon if it helps |
 | Outputs | 2 m temperature, 2 m dew point | the same |
 | Stations | METAR, Mesonet, ICOADS, global, ~20k | SYNOP 2025–26 and ISD 2015–24, Leningrad Oblast first (~240 training stations) |
-| Held out | a fixed 5 % of stations | the sibling repo's spatial folds |
+| Held out | a fixed 5 % of stations | spatial folds of stations, built here |
 | Pseudo-stations | 2,000 an hour from ERA5/HRES | none at first; added only if held-out skill between stations is poor |
 | Loss | fair CRPS, 2 members | the same |
 | Ensemble | from the backbone | from AIFS ENS's members |
@@ -31,7 +31,7 @@ AIFS ENS 2 m temperature is a grid-box value at ~31 km and misses what a thermom
 
 - **ERA5 starting states**, streamed and never stored: each start reads two global states (the 6 h before and now), about 1 GB, from ARCO-ERA5 or WeatherBench2's 13-level copy on Google Cloud. Starts at 00 and 12 UTC read every 6-hourly state once. About 5 MB/s keeps one GPU busy.
 - **What we keep**: AIFS ENS's internal state at the station points only, half precision, about 0.6 MB per step per member; roughly 250 GB for 10 years. Kept in object storage (Cloudflare R2 or Backblaze B2), never on the rented machine.
-- **Station truth**: temperature is already decoded in the sibling repo; dew point is to be decoded from the same ISD files and SYNOP bulletins, with the same traps.
+- **Station truth**: temperature and dew point decoded from NOAA ISD (2015–24) and OGIMET SYNOP bulletins (2025–26); the traps are in [estate.md](estate.md).
 
 ## Compute
 
