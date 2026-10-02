@@ -14,7 +14,8 @@ drafting. A correction that lands in chat twice lands here once.
 - **Backbone**: the frozen forecast model under the head. AIFS ENS first; any model whose
   weights we can run can take its place.
 - **WN3**: Google DeepMind's WeatherNext 3, whose station head this repo copies (Rasp et
-  al. 2026, arXiv 2609.03582). A method source, not a data source.
+  al. 2026, arXiv 2609.03582). A method source; its past forecasts can serve as a
+  benchmark for the head.
 - **ERA5**: ECMWF global reanalysis; the starting states for our AIFS ENS runs, read from
   ARCO-ERA5 on Google Cloud.
 - **SYNOP / ISD**: station truth. SYNOP is raw WMO FM-12 bulletins from OGIMET (2025–26);
@@ -63,6 +64,11 @@ drafting. A correction that lands in chat twice lands here once.
 - ERA5 is under the Copernicus licence (attribute C3S). Station reports from outside the
   US fall under WMO Resolution 40: keep station files out of git and public buckets, and
   publish derived scores only.
+
+- WN3 licence: download only runs whose whole 15-day window ended more than 1 h ago.
+  Everything held is then CC BY 4.0: credit "WeatherNext 3, Google DeepMind", link the
+  licence and say what was changed. Newer data falls under the GDM Real-Time Experimental
+  Data Terms of Use (sharing limits, a set citation text, revocable); keep none of it.
 
 ## How changes land
 
