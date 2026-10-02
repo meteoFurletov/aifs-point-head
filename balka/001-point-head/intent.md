@@ -1,6 +1,7 @@
 # Intent: a head on frozen AIFS ENS, after WN3
 
-Author: Nikita Furletov. Owner: Nikita Furletov. Status: accepted. Date: 2026-09-30.
+Author: Nikita Furletov. Owner: Nikita Furletov. Status: parked. Date: 2026-09-30.
+Parked 2026-10-02: after the 31 October write-up in aifs-cerra-downscaling.
 
 ## Problem
 

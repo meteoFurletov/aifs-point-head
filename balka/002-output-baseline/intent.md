@@ -1,6 +1,7 @@
 # Intent: the bar set by AIFS ENS output fields
 
-Author: Claude, for Nikita Furletov. Owner: Nikita Furletov. Status: draft. Date: 2026-10-01.
+Author: Claude, for Nikita Furletov. Owner: Nikita Furletov. Status: parked. Date: 2026-10-01.
+Parked 2026-10-02: after the 31 October write-up in aifs-cerra-downscaling.
 
 ## Problem
 
