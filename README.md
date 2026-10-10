@@ -8,6 +8,6 @@ The model underneath stays frozen. This is the station-head method of WeatherNex
 
 First model: ECMWF's open **AIFS ENS**. First region: Leningrad Oblast.
 
-Background: [docs/wn3-method.md](docs/wn3-method.md) (what WN3 does) and [docs/idea.md](docs/idea.md) (what this repo builds).
+Background: [docs/wn3-method.md](docs/wn3-method.md) (what WN3 does), [docs/idea.md](docs/idea.md) (what this repo builds) and [docs/reading-guide.md](docs/reading-guide.md) (related papers).
 
 Work runs through the balka loop; see `AGENTS.md` and `docs/estate.md`.
